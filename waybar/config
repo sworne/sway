@@ -1,0 +1,84 @@
+{
+    "layer": "bottom",
+    "position": "bottom",
+    "height": 40,
+    "modules-left": ["idle_inhibitor", "clock", "clock#la"],
+    "modules-center": ["sway/workspaces"],
+    "modules-right": ["network", "battery"],
+    "margin-top": 10,
+    "margin-bottom": 20,
+    "margin-right": 200,
+    "margin-left": 200,
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "●",
+            "deactivated": "○"
+        },
+        "tooltip": false
+    },
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "⯅",
+            "2": "⯁",
+            "3": "⯂",
+            "4": "⬢",
+            "5": "⯄",
+            "urgent": "⯌",
+            "default": "⯀"
+        }
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "syd ➫ {:%H:%M:%S %Y-%m-%d}"
+    },
+    "clock#la": {
+        "timezone": "America/Los_Angeles",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "la ➬ {:%H:%M:%S %Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°c"
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}%",
+        "format-plugged": "{capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-good": "",
+        "format-full": ""
+    },
+    "network": {
+        "format-wifi": "  {essid}  ",
+        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}  ",
+        "format-linked": "  {ifname} ---  ",
+        "format-disconnected": "",
+        "format-alt": "  {ipaddr}/{cidr}  "
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "{volume}%",
+        "format-source-muted": "",
+        "on-click": "pavucontrol"
+    }
+}
